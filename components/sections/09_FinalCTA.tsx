@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
+import { siteConfig } from "@/lib/site";
 
 export function FinalCTA() {
   return (
