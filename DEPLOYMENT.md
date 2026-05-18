@@ -7,6 +7,19 @@
 3. Import repository
 4. Deploy automatically
 
+## Local Development
+
+```bash
+
+npm install
+npm run dev
+
+Production Build
+
+npm run build
+npm start
+```
+
 
 ## Netlify
 
