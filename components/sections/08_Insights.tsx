@@ -1,39 +1,60 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { insights } from "@/content/insights";
-import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+const insights = [
+  {
+    title: "AI Operational Transformation in Fintech Organizations",
+    category: "AI Transformation",
+  },
+  {
+    title: "Why Payment Operations Become Bottlenecks at Scale",
+    category: "Fintech",
+  },
+  {
+    title: "Structuring Product Delivery Across Complex Teams",
+    category: "Product Leadership",
+  },
+  {
+    title: "Tokenization Beyond Hype: Operational Reality and Adoption",
+    category: "Web3",
+  },
+];
 
-export function Insights() {
+export default function Insights() {
   return (
-    <section id="insights" className="section-shell py-24">
-      <Reveal>
-        <SectionHeader
-          eyebrow="Insights"
-          title="Thinking for leaders building the next operating model."
-          copy="Short essays on strategy, AI, product systems, and the practical mechanics of execution."
-        />
-      </Reveal>
-      <div className="mt-12 grid gap-4 md:grid-cols-3">
-        {insights.map((insight) => (
-          <Reveal key={insight.slug}>
-            <Link
-              href={`/insights/${insight.slug}`}
-              className="group flex min-h-[310px] flex-col justify-between rounded-3xl border border-line bg-white/55 p-6 transition hover:-translate-y-1 hover:bg-white"
+    <section id="insights" className="py-32 px-6 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="uppercase text-xs tracking-[0.3em] text-zinc-500 mb-6">
+          Insights & Thinking
+        </div>
+
+        <h2 className="text-4xl md:text-6xl font-semibold max-w-5xl leading-tight mb-10">
+          Perspectives on AI enablement, fintech operations and scalable transformation.
+        </h2>
+
+        <p className="text-zinc-400 text-lg leading-relaxed max-w-3xl mb-20">
+          Sharing practical perspectives on operational complexity, product execution and modern digital transformation.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {insights.map((article) => (
+            <div
+              key={article.title}
+              className="rounded-3xl border border-white/5 bg-white/[0.02] p-10 hover:bg-white/[0.04] transition"
             >
-              <div>
-                <div className="flex items-center justify-between gap-4 text-xs font-bold uppercase tracking-[0.14em] text-clay">
-                  <span>{insight.category}</span>
-                  <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
-                <h3 className="mt-8 text-2xl font-semibold leading-tight text-ink">{insight.title}</h3>
-                <p className="mt-4 leading-7 text-ink/68">{insight.excerpt}</p>
+              <div className="text-cyan-400 text-sm mb-6">
+                {article.category}
               </div>
-              <p className="mt-8 text-sm font-semibold text-ink/50">{insight.readTime}</p>
-            </Link>
-          </Reveal>
-        ))}
+
+              <h3 className="text-2xl font-semibold mb-8 leading-tight">
+                {article.title}
+              </h3>
+
+              <button className="text-zinc-400 hover:text-white transition">
+                Read Insight →
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
