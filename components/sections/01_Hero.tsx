@@ -5,15 +5,14 @@ export function Hero() {
   return (
     <section className="section-shell grid min-h-[calc(100vh-4rem)] items-center gap-12 py-20 md:grid-cols-[1.1fr_0.9fr]">
       <Reveal>
-        <p className="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-clay">
-          Business outcomes, AI strategy, digital systems
-        </p>
-        <h1 className="font-serif text-6xl leading-[0.95] text-ink text-balance md:text-8xl">
-          Martin Mora
+        <div className="uppercase tracking-[0.3em] text-cyan-400 text-xs mb-6">
+          AI • Fintech • Product Transformation
+        </div>
+        <h1 className="text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight mb-8">
+          Helping fintechs modernize operations and scale digital products.
         </h1>
-        <p className="mt-7 max-w-2xl text-xl leading-9 text-ink/72">
-          I help leadership teams turn fuzzy ambition into executable systems: sharper strategy, smarter AI adoption,
-          better products, and measurable commercial progress.
+        <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-10">
+          Fractional product and transformation leadership for organizations navigating AI enablement, operational complexity and platform scale.
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <Button href="#contact">Start a conversation</Button>
