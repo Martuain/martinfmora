@@ -1,56 +1,80 @@
-import { CheckCircle2 } from "lucide-react";
-import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+"use client";
+
+import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: "Diagnose the operating reality",
-    copy: "Map goals, constraints, decision flows, incentives, and current performance signals."
+    number: "01",
+    title: "Operational Diagnosis",
+    description:
+      "Clarifying business priorities, operational bottlenecks, delivery friction and organizational constraints before proposing solutions.",
   },
   {
-    title: "Design the highest-leverage moves",
-    copy: "Separate attractive ideas from the moves that can change trajectory with the least noise."
+    number: "02",
+    title: "Strategic Alignment",
+    description:
+      "Aligning product, operations, technology and leadership stakeholders around measurable transformation objectives.",
   },
   {
-    title: "Build the execution system",
-    copy: "Shape product, process, AI, data, and governance into a practical cadence."
+    number: "03",
+    title: "Transformation Design",
+    description:
+      "Designing scalable operational models, AI-enabled workflows and execution structures adapted to organizational maturity.",
   },
   {
-    title: "Measure, learn, and compound",
-    copy: "Use tight feedback loops to improve decisions and keep the system honest."
-  }
+    number: "04",
+    title: "Execution Enablement",
+    description:
+      "Supporting delivery acceleration, cross-functional coordination and implementation governance across teams and initiatives.",
+  },
+  {
+    number: "05",
+    title: "Scale & Optimization",
+    description:
+      "Optimizing systems, operational workflows and delivery models to support sustainable long-term scalability.",
+  },
 ];
 
-export function HowIWork() {
+export default function HowIWork() {
   return (
-    <section id="process" className="bg-ink py-24 text-paper">
-      <div className="section-shell">
-        <Reveal>
-          <SectionHeader
-            eyebrow="How I work"
-            title="Structured enough to create momentum. Flexible enough for reality."
-            copy="The process is designed for senior teams that need clarity without theatre."
-            tone="dark"
-          />
-        </Reveal>
-        <div className="mt-12 grid gap-4">
+    <section className="py-32 px-6 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="uppercase text-xs tracking-[0.3em] text-zinc-500 mb-6">
+          How I Work
+        </div>
+
+        <h2 className="text-4xl md:text-6xl font-semibold max-w-5xl leading-tight mb-10">
+          Structured transformation leadership built around operational clarity and measurable execution.
+        </h2>
+
+        <p className="text-zinc-400 text-lg leading-relaxed max-w-3xl mb-20">
+          I combine strategic product thinking, operational transformation and delivery execution to help organizations move from complexity to scalable operational outcomes.
+        </p>
+
+        <div className="grid lg:grid-cols-5 gap-8">
           {steps.map((step, index) => (
-            <Reveal
-              key={step.title}
-              className="grid gap-5 rounded-3xl border border-white/12 bg-white/[0.06] p-6 md:grid-cols-[120px_1fr]"
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
+              viewport={{ once: true }}
+              className="relative border border-white/5 bg-white/[0.02] rounded-3xl p-8 hover:bg-white/[0.04] transition"
             >
-              <div className="flex items-center gap-3 text-sm font-semibold text-paper/55">
-                <CheckCircle2 className="size-5 text-moss" aria-hidden="true" />
-                Step {index + 1}
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold">{step.title}</h3>
-                <p className="mt-2 max-w-3xl leading-7 text-paper/68">{step.copy}</p>
-              </div>
-            </Reveal>
+              <div className="text-cyan-400 text-sm mb-4">{step.number}</div>
+
+              <h3 className="text-2xl font-semibold mb-4 leading-tight">
+                {step.title}
+              </h3>
+
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                {step.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
