@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+/*import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -72,6 +72,28 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <Analytics />
       </body>
+    </html>
+  );
+}
+*/
+
+import "./globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Martin Fernando Mora | AI & Fintech Transformation Leadership",
+  description:
+    "Strategic product, fintech and AI transformation leadership for modern digital organizations.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
