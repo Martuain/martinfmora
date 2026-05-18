@@ -15,7 +15,7 @@ export function FinalCTA() {
             Bring a messy strategic question, an AI initiative, or a digital product that needs sharper business logic.
           </p>
           <div className="mt-8">
-            <Button href="mailto:hello@martinmora.com" variant="secondary">
+            <Button href="mailto:martin.f.mora@gmail.com" variant="secondary">
               Email directly
             </Button>
           </div>
