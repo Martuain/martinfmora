@@ -2,11 +2,11 @@
 
 ## Vercel
 
-1. Push the repository to GitHub.
-2. Import it from Vercel.
-3. Set `NEXT_PUBLIC_SITE_URL` to the production domain.
-4. Add contact provider variables when you connect email delivery.
-5. Deploy.
+1. Push project to GitHub
+2. Create Vercel account
+3. Import repository
+4. Deploy automatically
+
 
 ## Netlify
 
