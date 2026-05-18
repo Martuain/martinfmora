@@ -4,10 +4,10 @@ export const siteConfig = {
   description:
     "Martin Mora helps ambitious teams turn strategy, AI, and digital execution into measurable business outcomes.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://martinmora.com",
-  email: "hello@martinmora.com",
+  email: "martin.f.mora@gmail.com",
   social: {
-    linkedin: "https://www.linkedin.com/",
-    github: "https://github.com/"
+    linkedin: "https://www.linkedin.com/in/martinfmora",
+    github: "https://github.com/Martuain"
   }
 };
 
