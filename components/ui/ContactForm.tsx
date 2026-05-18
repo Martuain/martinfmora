@@ -14,7 +14,7 @@ export function ContactForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    const response = await fetch("/api/contact", {
+    const response = await fetch("https://formspree.io/f/mgvzbjqw", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(formData))
