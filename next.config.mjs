@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} *//*
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -13,3 +13,9 @@ const nextConfig = {
 };
 
 export default nextConfig;
+*/
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+module.exports = nextConfig;
+
