@@ -3,38 +3,66 @@
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 
-const nodes = ["Markets", "Customers", "Data", "AI", "Product", "Operations", "Growth", "Leadership"];
+const signals = [
+  {
+    title: "ECB Wholesale CBDC MVP",
+    impact: "Cross-network DvP interoperability",
+    description:
+      "Delivered a wholesale CBDC proof-of-concept enabling Delivery versus Payment interoperability across distributed financial networks.",
+  },
+  {
+    title: "€470M Tokenized Real Estate Platform",
+    impact: "94% settlement time reduction",
+    description:
+      "Designed and coordinated the delivery of a tokenized real estate platform integrating ERC-1400 standards and automated KYC/AML workflows.",
+  },
+  {
+    title: "LATAM Mobile Banking Transformation",
+    impact: "$2.5B transaction volume",
+    description:
+      "Led the migration of 2.5M users across 12 countries while accelerating enterprise digital adoption.",
+  },
+];
 
-export function SignalSystem() {
+export default function SignalSystem() {
   return (
-    <section className="section-shell py-24">
-      <Reveal className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-        <div>
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-clay">Signal system</p>
-          <h2 className="font-serif text-4xl leading-[1.04] text-ink md:text-6xl">
-            Make the business easier to read.
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-ink/70">
-            Premium execution depends on the quality of the signals a team uses. The work creates visibility across
-            markets, customers, operations, data, and leadership decisions.
-          </p>
-        </div>
-        <div className="relative min-h-[440px] overflow-hidden rounded-[2rem] border border-line bg-white/50 p-6 shadow-soft">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(95,111,82,0.12),transparent_45%),linear-gradient(45deg,rgba(45,95,154,0.13),transparent_48%)]" />
-          <div className="relative grid h-full grid-cols-2 content-center gap-4 sm:grid-cols-4">
-            {nodes.map((node, index) => (
-              <motion.div
-                key={node}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3.2, repeat: Infinity, delay: index * 0.12 }}
-                className="flex aspect-square items-center justify-center rounded-full border border-line bg-paper/80 text-center text-sm font-semibold text-ink/72"
-              >
-                {node}
-              </motion.div>
-            ))}
+    <section className="border-t border-white/5 py-32 px-6">
+      <div className="max-w-7xl mx-auto">
+        <Reveal>
+          <div className="uppercase text-xs tracking-[0.3em] text-zinc-500 mb-6">
+            Selected Work
           </div>
+
+          <h2 className="text-4xl md:text-6xl font-semibold max-w-5xl leading-tight mb-20">
+            Delivering measurable impact across complex transformation initiatives.
+          </h2>
+        </Reveal>
+
+        <div className="space-y-8">
+          {signals.map((signal, index) => (
+            <motion.div
+              key={signal.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
+              viewport={{ once: true }}
+              className="rounded-[32px] border border-white/5 bg-white/[0.02] p-10 hover:bg-white/[0.04] transition"
+            >
+              <div className="text-cyan-400 text-sm mb-4">
+                {signal.impact}
+              </div>
+
+              <h3 className="text-3xl font-semibold mb-6">
+                {signal.title}
+              </h3>
+
+              <p className="text-zinc-400 text-lg leading-relaxed max-w-3xl">
+                {signal.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }
