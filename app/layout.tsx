@@ -21,7 +21,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL("https://martinfmora.vercel.app"),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`
