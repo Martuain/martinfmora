@@ -1,4 +1,8 @@
 "use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+
 const outcomes = [
   {
     title: "AI Operational Transformation",
